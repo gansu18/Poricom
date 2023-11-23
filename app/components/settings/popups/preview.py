@@ -40,7 +40,7 @@ class PreviewOptions(BaseOptions):
     def changeFontStyle(self, i):
         self.fontStyleIndex = i
         selectedFontStyle = self.fontStyleComboBox.currentText().strip()
-        replacementText = f"  font-family: '{selectedFontStyle}';\n"
+        replacementText = f"  font-style: '{selectedFontStyle}';\n"
         self.fontStyle = replacementText
 
     def changeFontSize(self, i):

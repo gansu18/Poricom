@@ -1,22 +1,3 @@
-"""
-Poricom Settings
-
-Copyright (C) `2021-2022` `<Alarcon Ace Belen>`
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-"""
-
 from PyQt5.QtWidgets import QLabel, QLineEdit, QWidget
 
 from .base import BaseOptions
@@ -36,15 +17,15 @@ class ShortcutOptions(BaseOptions):
 
         self.keyLineEdit = QLineEdit(self.captureExternalKey)
         self.layout().addWidget(self.keyLineEdit, 1, 1)
-        self.layout().addWidget(QLabel("Key: "), 1, 0)
+        self.layout().addWidget(QLabel("Tecla: "), 1, 0)
 
     def raiseKeyInvalidError(self, message: str):
-        BasePopup("Invalid Key", message).exec()
+        BasePopup("Tecla Inválida", message).exec()
 
     def changeModifier(self, i):
         self.modifierIndex = i
         self.modifier = self.modifierComboBox.currentText().strip() + "+"
-        if self.modifier == "No Modifier+":
+        if self.modifier == "Sin Modificador+":
             self.modifier = ""
 
     def changeShortcut(self):
